@@ -1,9 +1,23 @@
 package hangman.model;
 
 public class BonusScore implements GameScore{
-	
-	public int calculateScore(int correctCount, int incorrectCount) throws GameScoreExceptions{
-		return 0;
+	private int score;
+	private int penalizacion;
+	private int bonificacion;
+	private int minimo;
+	public int calculateScore(int correctCount, int incorrectCount) throws GameScoreException{
+		score=0;
+		bonificacion=10;
+		penalizacion=5;
+		minimo=0;
+		
+		if(score-(incorrectCount*penalizacion)+(correctCount*bonificacion)<minimo) {
+			throw new GameScoreException( GameScoreException.PUNTAJE_MINIMO);
+		}else {
+			score=score-(incorrectCount*penalizacion)+(correctCount*bonificacion);
+			
+		}
+		return score;
 	}
 
 }
