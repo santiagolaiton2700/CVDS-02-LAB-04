@@ -11,7 +11,7 @@ public class OriginalScore implements GameScore{
 		penalizacion=10;
 		minimo=0;
 		
-		if(score-(incorrectCount*penalizacion)<minimo) {
+		if(score-(incorrectCount*penalizacion)<minimo || incorrectCount<0 || correctCount<0) {
 			throw new GameScoreException( GameScoreException.PUNTAJE_MINIMO);
 			
 		}else {

@@ -11,11 +11,10 @@ public class BonusScore implements GameScore{
 		penalizacion=5;
 		minimo=0;
 		
-		if(score-(incorrectCount*penalizacion)+(correctCount*bonificacion)<minimo) {
+		if(score-(incorrectCount*penalizacion)+(correctCount*bonificacion)<minimo || incorrectCount<0 || correctCount<0) {
 			throw new GameScoreException( GameScoreException.PUNTAJE_MINIMO);
 		}else {
 			score=score-(incorrectCount*penalizacion)+(correctCount*bonificacion);
-			
 		}
 		return score;
 	}
