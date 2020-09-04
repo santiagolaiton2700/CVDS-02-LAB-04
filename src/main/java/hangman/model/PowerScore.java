@@ -22,7 +22,7 @@ public class PowerScore implements GameScore {
 			score+=(Math.pow(bono,i));
 		}
 			
-		score=score-incorrectCount*8;
+		score=score-incorrectCount*penalizacion;
 		
 		if(score>500) {
 			return 500;
