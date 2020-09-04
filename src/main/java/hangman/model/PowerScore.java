@@ -15,14 +15,14 @@ public class PowerScore implements GameScore {
 		bono=5;
 		maximo=500; 
 		
-		if(score-(incorrectCount*penalizacion)+(correctCount*bonificacion)<minimo || incorrectCount<0 || correctCount<0) {
+		if(score+(correctCount*bonificacion)-(incorrectCount*penalizacion)<minimo || incorrectCount<0 || correctCount<0) {
 			throw new GameScoreException( GameScoreException.PUNTAJE_MINIMO);
 		}
 		for (int i=1;i<correctCount;i++) {
 			score+=(Math.pow(bono,i));
 		}
 			
-		score=score-incorrectCount*penalizacion;
+		score=score-(incorrectCount*penalizacion);
 		
 		if(score>500) {
 			return 500;

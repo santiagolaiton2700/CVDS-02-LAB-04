@@ -3,8 +3,36 @@ package hangman.model;
 import org.junit.Assert;
 import org.junit.Test;
 import static org.junit.Assert.assertTrue;
+/**
+*Original Score 
+* -correctCount<0           				incorrect/@throws GameScoreException
+* -incorrectCount<0         				incorrect/@throws GameScoreException
+* -correctCount>=0 ^ 10<incorrectCount  	incorrect/@throws GameScoreException (SCORE<0)
+* -correctCount>=0 ^ incorrectCount=0   	correct/score=100
+* -correctCount>=0 ^ 0<incorrectCount<=10   correct/score-(incorrectCount*penalizacion)
+
+*____________________________________________________________________________________________________________________
 
 
+*Bonus Score 
+* -correctCount<0           				incorrect/@throws GameScoreException
+* -incorrectCount<0         				incorrect/@throws GameScoreException
+* -correctCount=0 ^ incorrectCount>=1   	incorrect/@throws GameScoreException (SCORE<0)
+* -correctCount=0 ^ incorrectCount=0	   	correct/score=0
+* -correctCount=1 ^ incorrectCount=0		correct/score+(correctCount*bonificacion)-(incorrectCount*penalizacion)
+* -correctCount=0 ^ incorrectCount=1		correct/score+(correctCount*bonificacion)-(incorrectCount*penalizacion)
+
+*_____________________________________________________________________________________________________________________
+
+
+*Power Score
+* -correctCount<0           				incorrect/@throws GameScoreException
+* -incorrectCount<0         				incorrect/@throws GameScoreException
+* -correctCount=0 ^ incorrectCount>=1   	incorrect/@throws GameScoreException (SCORE<0)
+* -correctCount=0 ^ incorrectCount=0  	    correct/score=0
+* -correctCount>=4 ^ incorrectCount=0		correct/score=500
+* -correctCount>0 ^ incorrectCount>0		correct/score+(correctCount*bonificacion)-(incorrectCount*penalizacion)
+*/
 public class GameScoreTest {
 	private GameScore original = new OriginalScore();
 	private GameScore bonus = new BonusScore();
@@ -126,7 +154,7 @@ public void elPuntajeMinimoEs0() throws GameScoreException {
 //El puntaje mayor obtenido es 500 (frontera) 
 @Test 
 public void elPuntajeMaximoEs500() throws GameScoreException {
-	Assert.assertEquals(500,(power.calculateScore(10,0)));
+	Assert.assertEquals(500,(power.calculateScore(100,0)));
 }
 
 //ClaseEquivalencia: El score inicial es 0
@@ -138,14 +166,9 @@ public void elScoreInicialEscero() throws GameScoreException {
 //ClaseEquivalencia: La $i-ésima$ letra correcta se bonifica con $5^i$
 @Test 
 public void bonificacioon() throws GameScoreException {
-	Assert.assertEquals(500,(power.calculateScore(100,0)));
+	Assert.assertEquals(500,(power.calculateScore(10,0)));
 }
 
-//ClaseEquivalencia: Cada letra incorrecta se penaliza con 8 puntos
-@Test 
-public void penalizacioon() throws GameScoreException {
-	Assert.assertEquals(5,(power.calculateScore(2,0)));
-}
 }
 
 
