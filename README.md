@@ -14,11 +14,17 @@
 ![image](https://user-images.githubusercontent.com/59893804/92268893-ced1e500-eea8-11ea-9438-bde567fe5106.png)
 >
 > * Para dichas especificaciones especificamos las clases de equivalencia y condiciones de frontera.
+![image](https://user-images.githubusercontent.com/59893804/92273836-b9ad8400-eeb1-11ea-98ae-11842b7653a2.png)
 >
 > * Para cada clase de equivalencia y condición de frontera implementamos pruebas.
-![image](https://user-images.githubusercontent.com/59893804/92269335-967ed680-eea9-11ea-80bd-4448b3905a80.png)
+![image](https://user-images.githubusercontent.com/59893804/92274021-1dd04800-eeb2-11ea-85fa-e88332ac1e1e.png)
 
 > * Hacemos el commit respectivo _implementación pruebas_
 ![image](https://user-images.githubusercontent.com/59893804/92269482-dcd43580-eea9-11ea-9217-219785df1fb3.png)
 >
+> * Finalizamos con el commit _implementación del modelo_
+![image](https://user-images.githubusercontent.com/59893804/92273979-05f8c400-eeb2-11ea-8b79-c8d7143ab6f3.png)
+>
+
+
 ### Parte II
