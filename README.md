@@ -28,3 +28,20 @@
 
 
 ### Parte II
+> * Incorporamos el Contenedor Liviano ```GoogleGuice``` el cual soporta la inyección de dependencias. 
+![image](https://user-images.githubusercontent.com/59893804/92294232-ef715d80-eeef-11ea-9d0a-7335229dd815.png)
+>
+
+> * Modificamos la inyección de dependencias utilizando guice en lugar del método fábrica
+![image](https://user-images.githubusercontent.com/59893804/92294347-095f7000-eef1-11ea-9b5a-379e6a4f5532.png)
+>
+
+> * Mediante la configuración de la Inyección de Dependencias cambiamos el comportamiento.
+![image](https://user-images.githubusercontent.com/59893804/92294429-ceaa0780-eef1-11ea-9f32-1533e6bc78b7.png)
+>
+
+> * Finalmente vemos la ejecucion grafica del juego 
+![image](https://user-images.githubusercontent.com/59893804/92294465-1e88ce80-eef2-11ea-9bfe-d886e05f1b63.png)
+![image](https://user-images.githubusercontent.com/59893804/92294477-32343500-eef2-11ea-9f23-717570e86a56.png)
+![image](https://user-images.githubusercontent.com/59893804/92294642-6a3b7800-eef2-11ea-94a5-a8ab6e68064c.png)
+>
